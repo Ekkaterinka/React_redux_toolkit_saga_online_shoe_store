@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Index from "./components/Index";
 import Catalog from "./components/Catalog";
 import Contacts from "./components/Contacts";
-import About from "./components/about";
+import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
