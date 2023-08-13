@@ -5,7 +5,7 @@ import {BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/React_redux_toolkit_saga_online_shoe_store">
+    <BrowserRouter >
     <App />
     </BrowserRouter>
   </React.StrictMode>,
