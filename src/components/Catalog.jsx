@@ -17,18 +17,20 @@ export default function Catalog({route}) {
     setInputValue(event.target.value);
   };
 
+  const search =       <form className="catalog-search-form form-inline" >
+  <input className="form-control" placeholder="Поиск" type="search"
+     onChange={handleInputChange} value={location.state?.data && location.state?.data}/>
+</form>
+
   useEffect(() => {
     dispatch(changeSearchField({ search: debouncedValue, page, filter: filter }));
   }, [debouncedValue]);
 
 
+
   return (
     <>
-      <form className="catalog-search-form form-inline" >
-        <input className="form-control" placeholder="Поиск" type="search"
-           onChange={handleInputChange} value={location.state?.data && location.state?.data}/>
-      </form>
-      <Index_loaded_Catalog/>
+      <Index_loaded_Catalog form={search}/>
     </>
   )
 }

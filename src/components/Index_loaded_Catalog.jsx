@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCatalog } from '../redux/reducers/CatalogSlices'
 import { useEffect, useState } from "react";
 
-export default function Index_loaded_Catalog() {
+export default function Index_loaded_Catalog({ form }) {
 
   const items = useSelector((state) => state.сatalog.list);
   const loading = useSelector((state) => state.сatalog.loading);
@@ -65,23 +65,23 @@ export default function Index_loaded_Catalog() {
       </div>
     </div>);
 
-  console.log(items.length)
   return (
     <>
       <div className="row">
         <div className="col">
           <section className="catalog">
             <h2 className="text-center">Каталог</h2>
+            {form}
             {loading && <div className="preloader">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>}
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>}
             <ul className="catalog-categories nav justify-content-center" >
               {Category}
             </ul >
-            {items.length ===0 && search.length > 0 ? <p>Товар не найден</p> : <div className="row">
+            {items.length === 0 && search.length > 0 ? <p>Товар не найден</p> : <div className="row">
               {Catalog}
             </div>}
 

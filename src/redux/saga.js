@@ -20,7 +20,7 @@ import {
   getTopSalesError
 } from './reducers/TopSalesSlices';
 
-import { postCart,postSucessCart } from './reducers/CartSlices';
+import { postCart,postSucessCart,getCartError } from './reducers/CartSlices';
 
 import { fetchDataCatalog, fetchDataTopSales, fetchDataProducts, fetchPostCart  } from '../api';
 
@@ -28,7 +28,6 @@ function* getCatalogSaga(action) {
   try {
     const data = yield call(fetchDataCatalog, action.payload
     );
-    console.log(action.payload)
     yield put(getCatalogSuccess(data));
   } catch (errors) {
     yield put(getCatalogError(errors));
@@ -59,7 +58,7 @@ function* postCartSaga(action) {
     const data = yield call(fetchPostCart, action.payload);
     yield put(postSucessCart(data));
   } catch (err) {
-    yield put(getProductError(err));
+    yield put(getCartError(err));
   }
 }
 
