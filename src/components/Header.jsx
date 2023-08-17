@@ -48,7 +48,7 @@ export default function Header() {
                     <div className='col'>
                         <nav className='navbar navbar-expand-sm navbar-light bg-light'>
                             <Link to='/' className='"navbar-brand"'>
-                                <img src="./src/image/header-logo.png" alt="Bosa Noga" />
+                                <img src="./image/header-logo.png" alt="Bosa Noga" />
                             </Link>
                             <div className='collapase navbar-collapse'>
                                 <ul className='navbar-nav mr-auto'>

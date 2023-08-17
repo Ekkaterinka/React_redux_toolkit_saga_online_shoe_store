@@ -9,7 +9,10 @@ a {
   color: #727e86;
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
@@ -21,8 +24,6 @@ section {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-
-
 
 
 /* Common Styles */
@@ -37,27 +38,32 @@ section {
   max-width: 280px;
   margin-left: auto;
 }
+
 .header-controls-pic {
   height: 32px;
   width: 32px;
   margin: 0 10px;
-  background-image: url(./src/image/header-controls-sprite.png);
+  background-image: url(./image/header-controls-sprite.png);
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
 .header-controls-search {
   position: relative;
   z-index: 1;
   background-position: -64px 0;
 }
+
 .header-controls-profile {
   position: relative;
   background-position: -32px 0;
 }
+
 .header-controls-cart {
   position: relative;
   background-position: 0 0;
 }
+
 .header-controls-cart-full {
   position: absolute;
   right: -10px;
@@ -73,6 +79,7 @@ section {
   background: linear-gradient(90deg, #ff65a5 1.11%, #ff8076 100%);
   box-shadow: 0px 2px 8px rgba(255, 101, 165, 0.6), inset 0px 1px 1px #ff8076;
 }
+
 .header-controls-search-form {
   position: absolute;
   right: 65px;
@@ -86,9 +93,11 @@ section {
   border-radius: 50px;
   text-align: right;
 }
-.form-control{
+
+.form-control {
   cursor: pointer;
 }
+
 .header-controls-search-form .form-control {
   width: 100%;
   height: 100%;
@@ -120,11 +129,12 @@ section {
 
 /* Preloader */
 .preloader {
-  margin: 10px auto;  
+  margin: 10px auto;
   position: relative;
   width: 30px;
   height: 30px;
 }
+
 .preloader span {
   border: 0;
   margin: 0;
@@ -134,32 +144,41 @@ section {
   border-radius: 50%;
   animation: spin 2s ease infinite;
 }
+
 .preloader :first-child {
   background: #19A68C;
   animation-delay: -1.5s;
 }
+
 .preloader :nth-child(2) {
   background: #ff748b;
   animation-delay: -1s;
 }
+
 .preloader :nth-child(3) {
   background: #ffb676;
   animation-delay: -0.5s;
 }
+
 .preloader :last-child {
   background: #727e86;
 }
+
 @keyframes spin {
+
   0%,
   100% {
     transform: translate(0);
   }
+
   25% {
     transform: translate(160%);
   }
+
   50% {
     transform: translate(160%, 160%);
   }
+
   75% {
     transform: translate(0, 160%);
   }
@@ -205,6 +224,7 @@ section {
   border-radius: 50px;
   margin-bottom: 2em;
 }
+
 .catalog-search-form .form-control {
   width: 100%;
   height: 100%;
@@ -224,6 +244,7 @@ section {
   justify-content: space-between;
   margin: 12px auto 0;
 }
+
 .footer-pay-systems {
   width: 46px;
   height: 28px;
@@ -231,26 +252,33 @@ section {
   border-radius: 8px;
   background-color: #FFFFFF;
   background-repeat: no-repeat;
-  background-image: url(./src/image/footer-sprite.png);
+  background-image: url(./image/footer-sprite.png);
 }
+
 .footer-pay-systems:not(:first-child) {
   margin-left: 5px;
 }
+
 .footer-pay-systems-paypal {
   background-position: -2px -6px;
 }
+
 .footer-pay-systems-master-card {
   background-position: -54px -8px;
 }
+
 .footer-pay-systems-visa {
   background-position: -104px -8px;
 }
+
 .footer-pay-systems-yandex {
   background-position: -154px -8px;
 }
+
 .footer-pay-systems-webmoney {
   background-position: -2px -46px;
 }
+
 .footer-pay-systems-qiwi {
   background-position: -52px -46px;
 }
@@ -258,6 +286,7 @@ section {
 .footer-social-links {
   margin-top: 10px;
 }
+
 .footer-social-link {
   display: inline-block;
   width: 36px;
@@ -265,14 +294,17 @@ section {
   margin: 0 5px;
   border-radius: 50%;
   background-repeat: no-repeat;
-  background-image: url(./src/image/footer-sprite.png);
+  background-image: url(./image/footer-sprite.png);
 }
+
 .footer-social-link-twitter {
   background-position: -107px -42px;
 }
+
 .footer-social-link-vk {
   background-position: -157px -42px;
 }
+
 .footer-social-link:hover {
   cursor: pointer;
 }
@@ -294,7 +326,8 @@ section {
   color: #ff0000;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   margin-bottom: 1.5em;
   margin-top: 2em;
 }
@@ -307,4 +340,10 @@ h2, .h2 {
 .btn-outline-primary:hover {
   background-color: #727e86;
   border-color: #727e86;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
 }

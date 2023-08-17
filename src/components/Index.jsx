@@ -8,7 +8,6 @@ export default function Index() {
     <>
       <Index_loaded_Top />
       <Index_loaded_Catalog />
-      
     </>
   )
 }

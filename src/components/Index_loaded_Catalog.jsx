@@ -52,11 +52,10 @@ export default function Index_loaded_Catalog() {
     </li>)
 
   const Catalog = items.map((i) =>
-    <div className="col-4 d-flex align-items-stretch " key={i.id}>
-      {loading && <div className="preloader"></div>}
+    <div className="col-4 align-items-stretch " key={i.id}>
       <div className="card catalog-item-card ">
         <img src={i.images[0]}
-          className="card-img-top img-fluid " alt={i.title} />
+          className="card-img-top img-fluid embed-responsive-item" alt={i.title} />
         <div className="card-body d-flex flex-column">
           <p className="card-text mt-auto">{i.title}</p>
           <p className="card-text mt-auto">{i.price.toLocaleString("ru-RU")} руб.</p>
@@ -82,7 +81,6 @@ export default function Index_loaded_Catalog() {
             <ul className="catalog-categories nav justify-content-center" >
               {Category}
             </ul >
-
             {items.length ===0 && search.length > 0 ? <p>Товар не найден</p> : <div className="row">
               {Catalog}
             </div>}
