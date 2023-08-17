@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCatalog } from '../redux/reducers/CatalogSlices'
 import { useEffect, useState } from "react";
 
-export default function Index_loaded_Catalog({ form }) {
-
+export default function Index_loaded_Catalog({ form, preloader }) {
   const items = useSelector((state) => state.сatalog.list);
-  const loading = useSelector((state) => state.сatalog.loading);
   const [category, setCategory] = useState([]);
   const search = useSelector((state) => state.сatalog.search);
   const [isActive, setActive] = useState('0');
@@ -47,13 +45,15 @@ export default function Index_loaded_Catalog({ form }) {
   };
 
   const Category = category.map((p, index) =>
-    <li className="nav-item d-flex align-items-stretch" key={p.id}>
+    <li className="nav-item" key={p.id}>
       <a name={index} id={p.id} className={isActive === index.toString() ? "nav-link active" : "nav-link"} onClick={handleClick}>{p.title}</a>
-    </li>)
+    </li>);
+
+    console.log(isActive)
 
   const Catalog = items.map((i) =>
-    <div className="col-4 align-items-stretch " key={i.id}>
-      <div className="card catalog-item-card ">
+    <div className="col-4 d-flex align-items-stretch " key={i.id}>
+      <div className="card catalog-item-card flex-grow-1 bd-highlight">
         <img src={i.images[0]}
           className="card-img-top img-fluid embed-responsive-item" alt={i.title} />
         <div className="card-body d-flex flex-column">
@@ -72,12 +72,7 @@ export default function Index_loaded_Catalog({ form }) {
           <section className="catalog">
             <h2 className="text-center">Каталог</h2>
             {form}
-            {loading && <div className="preloader">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>}
+            {preloader}
             <ul className="catalog-categories nav justify-content-center" >
               {Category}
             </ul >

@@ -110,6 +110,7 @@ section {
 /* Banner */
 .banner {
   position: relative;
+height:325px;
 }
 
 .banner-header {
