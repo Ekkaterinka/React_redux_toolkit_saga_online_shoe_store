@@ -39,17 +39,18 @@ export default function Index_loaded_Catalog({ form, preloader }) {
 
   const handleClick = (event) => {
     event.preventDefault();
-    setActive(event.target.name);
+    setActive(event.target.id);
     setFilter((event.target.id).toString());
     setSum(0);
   };
 
-  const Category = category.map((p, index) =>
-    <li className="nav-item" key={p.id}>
-      <a name={index} id={p.id} className={isActive === index.toString() ? "nav-link active" : "nav-link"} onClick={handleClick}>{p.title}</a>
-    </li>);
+  const Category = category.map((p) =>
+    <li className="nav-item">
+      <a id={p.id} key={p.id} className={isActive === p.id.toString() ? "nav-link active" : "nav-link"} onClick={handleClick}>{p.title}</a>
+    </li>
+  );
 
-    console.log(isActive)
+  console.log(isActive)
 
   const Catalog = items.map((i) =>
     <div className="col-4 d-flex align-items-stretch " key={i.id}>
@@ -74,12 +75,14 @@ export default function Index_loaded_Catalog({ form, preloader }) {
             {form}
             {preloader}
             <ul className="catalog-categories nav justify-content-center" >
+              <li className="nav-item">
+                <a id="0" className={isActive === "0" ? "nav-link active" : "nav-link"} onClick={handleClick}>Все</a>
+              </li>
               {Category}
             </ul >
             {items.length === 0 && search.length > 0 ? <p>Товар не найден</p> : <div className="row">
               {Catalog}
             </div>}
-
             <div className="text-center">
               {items.length === 6 ?
                 <button className="btn btn-outline-primary" onClick={downloadMore}>Загрузить ещё</button>
