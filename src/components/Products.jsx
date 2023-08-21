@@ -46,7 +46,7 @@ export default function Products() {
                         </p>
 
                     </div>
-                    <button className="btn btn-danger btn-block btn-lg" disabled={!size} onClick={inToCart}>В корзину</button>
+                    <button className="btn btn-danger btn-block btn-lg" disabled={!(size && count)} onClick={inToCart}>В корзину</button>
                 </div>
             )
         }

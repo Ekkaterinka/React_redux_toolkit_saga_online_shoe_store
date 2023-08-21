@@ -45,21 +45,20 @@ export default function Index_loaded_Catalog({ form, preloader }) {
   };
 
   const Category = category.map((p) =>
-    <li className="nav-item">
+    <li className="nav-item" key={p.id}>
       <a id={p.id} key={p.id} className={isActive === p.id.toString() ? "nav-link active" : "nav-link"} onClick={handleClick}>{p.title}</a>
     </li>
   );
 
-  console.log(isActive)
 
   const Catalog = items.map((i) =>
-    <div className="col-4 d-flex align-items-stretch " key={i.id}>
-      <div className="card catalog-item-card flex-grow-1 bd-highlight">
+    <div className="col-4 d-flex" key={i.id}>
+      <div className="card catalog-item-card flex-grow-1 ">
         <img src={i.images[0]}
-          className="card-img-top img-fluid embed-responsive-item" alt={i.title} />
-        <div className="card-body d-flex flex-column">
-          <p className="card-text mt-auto">{i.title}</p>
-          <p className="card-text mt-auto">{i.price.toLocaleString("ru-RU")} руб.</p>
+          className="card-img-top img-fluid" alt={i.title} />
+        <div className="card-body mt-auto">
+          <p className="card-text">{i.title}</p>
+          <p className="card-text ">{i.price.toLocaleString("ru-RU")} руб.</p>
           <Link to={`/${i.id}`}><button className="btn btn-outline-primary">Заказать</button></Link>
 
         </div>

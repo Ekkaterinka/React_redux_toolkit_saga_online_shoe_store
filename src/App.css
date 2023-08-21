@@ -343,8 +343,10 @@ h2,
   border-color: #727e86;
 }
 
+.card-body {
+  flex: 0 1 auto;
+}
 .card-img-top {
   width: 100%;
-  height: 35vh;
-  object-fit: cover;
+
 }
