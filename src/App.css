@@ -253,7 +253,7 @@ height:325px;
   border-radius: 8px;
   background-color: #FFFFFF;
   background-repeat: no-repeat;
-  background-image: url(./image/footer-sprite.png);
+  background-image: url(../image/footer-sprite.png);
 }
 
 .footer-pay-systems:not(:first-child) {
@@ -295,7 +295,7 @@ height:325px;
   margin: 0 5px;
   border-radius: 50%;
   background-repeat: no-repeat;
-  background-image: url(./image/footer-sprite.png);
+  background-image: url(../image/footer-sprite.png);
 }
 
 .footer-social-link-twitter {
