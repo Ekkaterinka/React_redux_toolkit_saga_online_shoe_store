@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCatalog } from '../redux/reducers/CatalogSlices'
 import { useEffect, useState } from "react";
+import Loader from '../components/Loader';
 
-export default function Index_loaded_Catalog({ form, preloader }) {
+export default function LoadedCatalog({ form }) {
   const items = useSelector((state) => state.сatalog.list);
+  const loading = useSelector((state) => state.сatalog.loading);
   const [category, setCategory] = useState([]);
   const search = useSelector((state) => state.сatalog.search);
   const [isActive, setActive] = useState('0');
@@ -50,6 +52,8 @@ export default function Index_loaded_Catalog({ form, preloader }) {
     </li>
   );
 
+  console.log(items)
+
 
   const Catalog = items.map((i) =>
     <div className="col-4 d-flex" key={i.id}>
@@ -72,7 +76,7 @@ export default function Index_loaded_Catalog({ form, preloader }) {
           <section className="catalog">
             <h2 className="text-center">Каталог</h2>
             {form}
-            {preloader}
+            <Loader loading={loading} />
             <ul className="catalog-categories nav justify-content-center" >
               <li className="nav-item">
                 <a id="0" className={isActive === "0" ? "nav-link active" : "nav-link"} onClick={handleClick}>Все</a>

@@ -2,16 +2,16 @@ import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import 'bootstrap/dist/css/bootstrap.css';
-import Index from "./components/Index";
-import Catalog from "./components/Catalog";
-import Contacts from "./components/Contacts";
-import About from "./components/About";
-import ErrorPage from "./components/ErrorPage";
+import MainPage from "./pages/MainPage";
+import Catalog from "./pages/Catalog";
+import Contacts from "./pages/Contacts";
+import About from "./pages/About";
+import ErrorPage from "./pages/ErrorPage";
 import Products from "./components/Products";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import Banner from "./components/Banner";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import store from "./redux/store";
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
         <main className="container">
           <Banner />
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/Catalog" element={<Catalog />} />
             <Route path="/Сontacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />

@@ -348,5 +348,8 @@ h2,
 }
 .card-img-top {
   width: 100%;
-
+}
+.card {
+  max-width: 30rem;
+  margin: 0 auto;
 }

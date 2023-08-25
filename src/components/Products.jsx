@@ -29,14 +29,14 @@ export default function Products() {
         navigate('/Cart');
     };
 
-    const sizes = items.sizes?.map((e, index) => {
-        if (e.available === true) {
+    const sizes = items.sizes?.map((el, index) => {
+        if (el.available === true) {
             return (
                 <div key={index}>
                     <div className="text-center">
                         <p >Размеры в наличии:
-                            <span name={e.size} id={index} className=
-                                {active === index.toString() ? "catalog-item-size selected" : "catalog-item-size"} onClick={handleToggle}>{e.size}</span>
+                            <span name={el.size} id={index} className=
+                                {active === index.toString() ? "catalog-item-size selected" : "catalog-item-size"} onClick={handleToggle}>{el.size}</span>
                         </p>
                         <p>Количество: <span className="btn-group btn-group-sm pl-2">
                             <button className="btn btn-secondary" onClick={() => count > 0 && setCount(count - 1)}>-</button>

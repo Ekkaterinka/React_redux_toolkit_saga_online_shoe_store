@@ -42,7 +42,7 @@ export const fetchPostCart = async (order) => {
         body: JSON.stringify({
             "owner": {
                 "phone": order.telephone,
-                "address": order.address,
+                "address": order.adress,
             },
             "items": order.product
         }),
