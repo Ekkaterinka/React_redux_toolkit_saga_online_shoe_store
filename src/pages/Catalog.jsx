@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { changeSearchField } from '../redux/reducers/CatalogSlices';
-import Index_loaded_Catalog from '../components/LoadedCatalog';
+import LoadedCatalog from '../components/LoadedCatalog/LoadedCatalog'
 import { useDebounce } from 'use-debounce';
 import { useLocation } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ export default function Catalog() {
   return (
     <>
       
-      <Index_loaded_Catalog form={search} />
+      <LoadedCatalog form={search} />
     </>
   )
 }

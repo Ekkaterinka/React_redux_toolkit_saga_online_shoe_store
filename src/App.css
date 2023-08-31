@@ -37,6 +37,7 @@ section {
   justify-content: right;
   max-width: 280px;
   margin-left: auto;
+  flex-grow: 1;
 }
 
 .header-controls-pic {
@@ -110,18 +111,18 @@ section {
 /* Banner */
 .banner {
   position: relative;
-height:325px;
+  height: 100%;
 }
 
 .banner-header {
   position: absolute;
   z-index: 5;
   right: 0;
-  top: 42px;
-  height: 98px;
-  width: 487px;
+  top: 15%;
+  height: 58%;
+  width: 78%;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 5.5vw;
   line-height: 98px;
   text-align: center;
   color: #FFFFFF;

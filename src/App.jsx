@@ -1,18 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import MainPage from "./pages/MainPage";
 import Catalog from "./pages/Catalog";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
-import Products from "./components/Products";
+import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import Banner from "./components/Banner";
+import store from "./redux/store";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import store from "./redux/store";
 function App() {
 
   return (

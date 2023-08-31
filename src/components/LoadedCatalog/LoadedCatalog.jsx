@@ -1,20 +1,22 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getCatalog } from '../redux/reducers/CatalogSlices'
+import { getCatalog } from '../../redux/reducers/CatalogSlices'
 import { useEffect, useState } from "react";
-import Loader from '../components/Loader';
+import Loader from '../Loader';
+import CartCatalog from './CartCatalog';
+import Category from './Category';
 
 export default function LoadedCatalog({ form }) {
   const items = useSelector((state) => state.сatalog.list);
   const loading = useSelector((state) => state.сatalog.loading);
-  const [category, setCategory] = useState([]);
   const search = useSelector((state) => state.сatalog.search);
+
+  const [category, setCategory] = useState([]);
   const [isActive, setActive] = useState('0');
-  const dispatch = useDispatch();
   const [sum, setSum] = useState(0);
   const [filter, setFilter] = useState('0');
 
+  const dispatch = useDispatch();
 
   function getCategory() {
     fetch(' http://localhost:7070/api/categories')
@@ -46,29 +48,6 @@ export default function LoadedCatalog({ form }) {
     setSum(0);
   };
 
-  const Category = category.map((p) =>
-    <li className="nav-item" key={p.id}>
-      <a id={p.id} key={p.id} className={isActive === p.id.toString() ? "nav-link active" : "nav-link"} onClick={handleClick}>{p.title}</a>
-    </li>
-  );
-
-  console.log(items)
-
-
-  const Catalog = items.map((i) =>
-    <div className="col-4 d-flex" key={i.id}>
-      <div className="card catalog-item-card flex-grow-1 bd-highlight">
-        <img src={i.images[0]}
-          className="card-img-top img-fluid" alt={i.title} />
-        <div className="card-body d-flex flex-column ">
-          <p className="card-text mt-auto ">{i.title}</p>
-          <p className="card-text mt-auto">{i.price.toLocaleString("ru-RU")} руб.</p>
-          <Link to={`/${i.id}`}><button className="btn btn-outline-primary">Заказать</button></Link>
-
-        </div>
-      </div>
-    </div>);
-
   return (
     <>
       <div className="row">
@@ -77,15 +56,13 @@ export default function LoadedCatalog({ form }) {
             <h2 className="text-center">Каталог</h2>
             {form}
             <Loader loading={loading} />
-            <ul className="catalog-categories nav justify-content-center" >
-              <li className="nav-item">
-                <a id="0" className={isActive === "0" ? "nav-link active" : "nav-link"} onClick={handleClick}>Все</a>
-              </li>
-              {Category}
-            </ul >
-            {items.length === 0 && search.length > 0 ? <p>Товар не найден</p> : <div className="row">
-              {Catalog}
-            </div>}
+            <Category category={category} handleClick={handleClick} isActive={isActive} />
+            {items.length === 0 && search.length > 0 ?
+              <p>Товар не найден</p>
+              :
+              <div className="row">
+                <CartCatalog items={items} />
+              </div>}
             <div className="text-center">
               {items.length === 6 ?
                 <button className="btn btn-outline-primary" onClick={downloadMore}>Загрузить ещё</button>
