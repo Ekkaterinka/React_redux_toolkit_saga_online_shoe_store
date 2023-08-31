@@ -57,12 +57,12 @@ export default function LoadedCatalog({ form }) {
 
   const Catalog = items.map((i) =>
     <div className="col-4 d-flex" key={i.id}>
-      <div className="card catalog-item-card flex-grow-1 ">
+      <div className="card catalog-item-card flex-grow-1 bd-highlight">
         <img src={i.images[0]}
           className="card-img-top img-fluid" alt={i.title} />
-        <div className="card-body mt-auto">
-          <p className="card-text">{i.title}</p>
-          <p className="card-text ">{i.price.toLocaleString("ru-RU")} руб.</p>
+        <div className="card-body d-flex flex-column ">
+          <p className="card-text mt-auto ">{i.title}</p>
+          <p className="card-text mt-auto">{i.price.toLocaleString("ru-RU")} руб.</p>
           <Link to={`/${i.id}`}><button className="btn btn-outline-primary">Заказать</button></Link>
 
         </div>

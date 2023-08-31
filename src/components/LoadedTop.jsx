@@ -20,7 +20,7 @@ export default function LoadedTop() {
         <img src={p.images[0]}
           className="card-img-top img-fluid" alt={p.title} />
         <div className="card-body d-flex flex-column">
-          <p className="card-text mt-auto">{p.title}</p>
+          <p className="card-text">{p.title}</p>
           <p className="card-text mt-auto">{p.price.toLocaleString("ru-RU")} руб.</p>
           <Link to={`/${p.id}`}><button className="btn btn-outline-primary">Заказать</button></Link>
         </div>
